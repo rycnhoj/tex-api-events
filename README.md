@@ -12,6 +12,6 @@ Runs the app in browser
 
 ### `npm run data`
 
-Should be ran in parallel to 'npm start' and it will listening for events and funneling them to a local file
+Should be ran in parallel to 'npm start' and it will listening for events and directs them to a local file
 
 ## This is very much still be worked on and will need more improvement
