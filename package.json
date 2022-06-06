@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "data": "must get this from john cyr"
+    "data": "./src/kafka/bin/kafka-console-consumer.sh --bootstrap-server kafka-bootstrap-qa03-int.secureta.net:9094 --topic tfs-events --consumer.config ~/.add123/client.properties --from-beginning >> src/data/tfsData"
   },
   "eslintConfig": {
     "extends": [

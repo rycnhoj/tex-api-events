@@ -6,7 +6,7 @@ import { transActivityCode, transBusCode, transClientCode, transCommType } from 
 const DynamicCol = ({ label, value }) =>
   (value && value !== '') ? <Col {...third}><strong>{label}:  </strong>{value}</Col> : null
 
-const EventPage = ({ event }) => console.log(event) ||
+const EventPage = ({ event }) =>
   <div>
     <h1>Event Details</h1>
     <hr />
