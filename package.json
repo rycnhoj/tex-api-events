@@ -1,5 +1,5 @@
 {
-  "name": "tex-api-exceptions",
+  "name": "tex-api-events",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
