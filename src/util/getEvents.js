@@ -1,4 +1,5 @@
 
+import { startOfToday } from 'date-fns'
 import tfsData from '../data/tfsData'
 import { parseDatabaseDateTime } from './dateUtil'
 
@@ -39,6 +40,7 @@ const getEvents = () => {
     })
     .filter(event => event !== null)
     .filter(event => !['MINTERCI', 'DELGADAN', 'GUNTERKE', 'WEIZMAAD', 'GARRETMA', 'MCDONAR1'].includes(event.UserId))
+    .filter(event => parseDatabaseDateTime(event.EventDate) > startOfToday())
     .sort((a, b) => {
       const timeA = parseDatabaseDateTime(a.EventDate)
       const timeB = parseDatabaseDateTime(b.EventDate)

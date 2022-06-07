@@ -2,6 +2,7 @@ import { Col, Row } from 'reactstrap'
 import { third } from '../../util/colSizes'
 import { convertDatabaseToDisplayDate } from '../../util/dateUtil'
 import { transActivityCode, transBusCode, transClientCode, transCommType } from '../../util/translators'
+import ReactJson from 'react-json-view'
 
 const DynamicCol = ({ label, value }) =>
   (value && value !== '') ? <Col {...third}><strong>{label}:  </strong>{value}</Col> : null
@@ -37,6 +38,9 @@ const EventPage = ({ event }) =>
       <DynamicCol label='Data' value={event?.Data} />
     </Row>
     <hr />
+    <Row>
+      <ReactJson src={event} />
+    </Row>
   </div>
 
 export default EventPage

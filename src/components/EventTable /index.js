@@ -52,7 +52,7 @@ const EventTable = () => {
   useInterval(async () => {
     const newEvents = await getEvents()
     setEvents(newEvents)
-  }, 10000)
+  }, 5000)
 
   return (
     <div className='events'>
