@@ -4,6 +4,10 @@ This is so we can monitor kafka events for tex-api.
 
 You must run the following command in the src/kafka folder to setup kafka for use
 
+```
+./gradlew jar -PscalaVersion=2.13.6
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
