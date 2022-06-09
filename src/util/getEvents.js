@@ -1,5 +1,5 @@
 
-import { startOfToday } from 'date-fns'
+import { startOfYesterday } from 'date-fns'
 import tfsData from '../data/tfsData'
 import { parseDatabaseDateTime } from './dateUtil'
 
@@ -40,14 +40,16 @@ const getEvents = () => {
     })
     .filter(event => event !== null)
     .filter(event => !['MINTERCI', 'DELGADAN', 'GUNTERKE', 'WEIZMAAD', 'GARRETMA', 'MCDONAR1'].includes(event.UserId))
-    .filter(event => parseDatabaseDateTime(event.EventDate) > startOfToday())
+    // .filter(event => parseDatabaseDateTime(event.EventDate) > startOfYesterday())
+    // .filter(({ AccountNumber }) => AccountNumber === '010272VV958')
     .sort((a, b) => {
       const timeA = parseDatabaseDateTime(a.EventDate)
       const timeB = parseDatabaseDateTime(b.EventDate)
       if (timeA < timeB) return 1
       if (timeA > timeB) return -1
       return 0
-    }).slice(0, 100)
+    })
+    .slice(0, 100)
 
   return removeDups(events)
 }
